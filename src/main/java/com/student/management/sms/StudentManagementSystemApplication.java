@@ -1,6 +1,8 @@
 package com.student.management.sms;
 
+import com.student.management.sms.entity.ClassRoom;
 import com.student.management.sms.entity.Student;
+import com.student.management.sms.repository.ClassRoomReposistory;
 import com.student.management.sms.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -17,11 +19,21 @@ public class StudentManagementSystemApplication implements CommandLineRunner {
 	@Autowired
 	private StudentRepository studentRepository;
 
+//	@Override
+//	public void run(String... args) throws Exception {
+////		Student student1 = new Student("Soeun", "Lay", "laysoeun@gmail.com");
+////		studentRepository.save(student1);
+////		Student student2 = new Student("Soeun2", "Lay2", "soeunlay2@gmail.com");
+////		studentRepository.save(student2);
+//
+//	}
+
+	@Autowired
+	private ClassRoomReposistory classRoomReposistory;
+
 	@Override
 	public void run(String... args) throws Exception {
-//		Student student1 = new Student("Soeun", "Lay", "laysoeun@gmail.com");
-//		studentRepository.save(student1);
-//		Student student2 = new Student("Soeun2", "Lay2", "soeunlay2@gmail.com");
-//		studentRepository.save(student2);
+//		ClassRoom classRoom1 = new ClassRoom("Class room 001","This class is only 50 student");
+//		classRoomReposistory.save(classRoom1);
 	}
 }
