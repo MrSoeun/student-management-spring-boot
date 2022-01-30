@@ -25,4 +25,19 @@ public class ClassRoomServiceImpl implements ClassRoomService {
     public ClassRoom saveClassRoom(ClassRoom classRoom) {
         return classRoomReposistory.save(classRoom);
     }
+
+    @Override
+    public ClassRoom getClassRoomById(Long id) {
+        return classRoomReposistory.findById(id).get();
+    }
+
+    @Override
+    public ClassRoom updateClassRoom(ClassRoom classRoom) {
+        return classRoomReposistory.save(classRoom);
+    }
+
+    @Override
+    public void deleteClassRoomById(Long id) {
+        classRoomReposistory.deleteById(id);
+    }
 }

@@ -8,4 +8,10 @@ public interface ClassRoomService {
     List<ClassRoom> getAllClassRoom();
 
     ClassRoom saveClassRoom(ClassRoom classRoom);
+
+    ClassRoom getClassRoomById(Long id);
+
+    ClassRoom updateClassRoom(ClassRoom classRoom);
+
+    void deleteClassRoomById(Long id);
 }

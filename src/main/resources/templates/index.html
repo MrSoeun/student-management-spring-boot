@@ -1,10 +1,43 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
         "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <title>$Title$</title>
+  <title>Student Management System</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
 </head>
 <body>
-$END$
+    <div>
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+            <!-- Brand -->
+            <a class="navbar-brand" href="#">Student management System</a>
+            <div class="navbar-collapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/students}">Student</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/classrooms}">Class Room</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/employees}">Employee</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="container">
+        <div class="card mt-5">
+            <div class="card-header">
+                <div class="d-flex">
+                    <div class="mr-auto p-2">
+                        <h1>Dashboard</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body"></div>
+        </div>
+    </div>
 </body>
 </html>

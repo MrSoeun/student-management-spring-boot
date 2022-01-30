@@ -1,10 +1,82 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
         "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <title>$Title$</title>
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
 </head>
 <body>
-$END$
+    <div>
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+            <!-- Brand -->
+            <a class="navbar-brand" href="#">Student management System</a>
+            <div class="navbar-collapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/students}">Student</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/classrooms}">Class Room</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/employees}">Employee</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="container">
+        <div class="card mt-5">
+            <div class="card-header">
+                <div class="d-flex">
+                    <div class="mr-auto p-2">
+                        <h1>Employee List</h1>
+                    </div>
+                    <div class="p-2">
+                        <a th:href="@{/employees/view}" class="btn btn-primary">Add New</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+               <table class="table table-striped table-bordered">
+                   <thead class="table-dark">
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Gender</th>
+                            <th>Date of Birth</th>
+                            <th>Place of Birth</th>
+                            <th>Current Address</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>Actions</th>
+                        </tr>
+                   </thead>
+                   <tbody>
+                       <tr th:each="employee : ${employees}">
+                           <td th:text = "${employee.firstName}"></td>
+                           <td th:text = "${employee.lastName}"></td>
+                           <td th:text = "${employee.gender}"></td>
+                           <td th:text = "${employee.birthDate}"></td>
+                           <td th:text = "${employee.placeOfBirth}"></td>
+                           <td th:text = "${employee.currentAddress}"></td>
+                           <td th:text = "${employee.phone}"></td>
+                           <td th:text = "${employee.email}"></td>
+                           <td>
+                               <a th:href="@{/employees/edit/{id}(id=${employee.id})}"
+                                  class="btn btn-primary"
+                               >Update</a>
+                               <a th:href="@{/employee/edit/{id}(id=${employee.id})}"
+                                    class="btn btn-danger"
+                               >Delete</a>
+                           </td>
+                       </tr>
+                   </tbody>
+               </table>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

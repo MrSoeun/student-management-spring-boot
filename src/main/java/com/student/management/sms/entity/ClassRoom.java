@@ -11,6 +11,8 @@ public class ClassRoom {
     private Long id;
     @Column(name = "class_name", nullable = false)
     private String className;
+    @Column(name = "limit_student")
+    private int limitStudent;
     @Column(name = "description")
     private String description;
 
@@ -19,8 +21,9 @@ public class ClassRoom {
 
     }
 
-    public ClassRoom(String className, String description) {
+    public ClassRoom(String className, int limitStudent, String description) {
         this.className = className;
+        this.limitStudent = limitStudent;
         this.description = description;
     }
 
@@ -38,6 +41,14 @@ public class ClassRoom {
 
     public void setClassName(String className) {
         this.className = className;
+    }
+
+    public int getLimitStudent() {
+        return limitStudent;
+    }
+
+    public void setLimitStudent(int limitStudent) {
+        this.limitStudent = limitStudent;
     }
 
     public String getDescription() {
